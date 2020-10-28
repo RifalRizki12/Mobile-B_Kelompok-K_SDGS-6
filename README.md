@@ -1,16 +1,11 @@
-# project
+# Kelompok K - Flutter
 
-A new Flutter application.
+1. Mohammad Rizki Atoilah - 182410103018
+2. Muhammad Syafiul Ulum  - 182410103041
+3. Novi Urfasi Nurfadilah - 182410103095
 
-## Getting Started
+## Deskripsi Aplikasi
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Penjelasan Progress
+1. Progress pertama menambahkan nama dan nim,username github ,link repositori github
+2. progress kedua membuat tampilan splashscreen, login dan register dan menerapkan core widget dan root widget, lalu upload github.
