@@ -4,7 +4,8 @@
 2. Muhammad Syafiul Ulum  - 182410103041
 3. Novi Urfasi Nurfadilah - 182410103095
 
-## Deskripsi Aplikasi
+# Deskripsi Aplikasi
+My Water- Aplikasi pengingat untuk minum , dan pengelompokkan air bersih berbasis mobile
 
 # Penjelasan Progress
 1. Progress pertama menambahkan nama dan nim,username github ,link repositori github
