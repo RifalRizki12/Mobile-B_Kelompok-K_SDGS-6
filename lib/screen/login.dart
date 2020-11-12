@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:project/Animation/FadeAnimation.dart';
 import 'package:project/screen/register.dart';
 
+import 'home.dart';
+
 class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -123,11 +125,11 @@ class Login extends StatelessWidget {
                               height: 50,
                               minWidth: 250,
                               onPressed: () {
-                                // Navigator.push(
-                                //   context,
-                                //   MaterialPageRoute(
-                                //       builder: (context) => Register()),
-                                // );
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Home()),
+                                );
                               },
                               shape: RoundedRectangleBorder(
                                 side: BorderSide(
