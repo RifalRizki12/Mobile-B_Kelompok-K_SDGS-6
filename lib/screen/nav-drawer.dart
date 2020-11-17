@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:project/componenDrawer/about.dart';
+import 'package:project/componenDrawer/profile.dart';
+import 'package:project/componenDrawer/setting.dart';
+import 'package:project/screen/login.dart';
 
 class DrawerWidget extends StatelessWidget {
   @override
@@ -9,21 +13,33 @@ class DrawerWidget extends StatelessWidget {
         children: <Widget>[
           _drawerHeader(),
           _drawerItem(
-              icon: Icons.folder,
-              text: 'My Files',
-              onTap: () => print('Tap My Files')),
+              icon: Icons.account_circle,
+              text: 'Profile',
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Profile()));
+              }),
           _drawerItem(
-              icon: Icons.group,
-              text: 'Shared with me',
-              onTap: () => print('Tap Shared menu')),
-          _drawerItem(
-              icon: Icons.access_time,
-              text: 'Recent',
-              onTap: () => print('Tap Recent menu')),
-          _drawerItem(
-              icon: Icons.delete,
-              text: 'Trash',
-              onTap: () => print('Tap Trash menu')),
+              icon: Icons.android,
+              text: 'About',
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => About()));
+              }),
+          // _drawerItem(
+          //     icon: Icons.access_time,
+          //     text: 'Recent',
+          //     onTap: () {
+          //       Navigator.pushReplacement(context,
+          //           MaterialPageRoute(builder: (context) => Login()));
+          //     }),
+          // _drawerItem(
+          //     icon: Icons.delete,
+          //     text: 'Trash',
+          //     onTap: () {
+          //       Navigator.pushReplacement(context,
+          //           MaterialPageRoute(builder: (context) => Login()));
+          //     }),
           Divider(height: 25, thickness: 1),
           Padding(
             padding: const EdgeInsets.only(left: 20.0, top: 10, bottom: 10),
@@ -34,9 +50,19 @@ class DrawerWidget extends StatelessWidget {
                 )),
           ),
           _drawerItem(
-              icon: Icons.bookmark,
-              text: 'Family',
-              onTap: () => print('Tap Family menu')),
+              icon: Icons.settings,
+              text: 'Setting',
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Setting()));
+              }),
+          _drawerItem(
+              icon: Icons.input,
+              text: 'LogOut',
+              onTap: () {
+                Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (context) => Login()));
+              }),
         ],
       ),
     );
@@ -47,11 +73,11 @@ Widget _drawerHeader() {
   return UserAccountsDrawerHeader(
     currentAccountPicture: ClipOval(
       child: Image(
-          image: AssetImage('assets/images/icon1.png'), fit: BoxFit.cover),
+          image: AssetImage('assets/images/icon1.png'), fit: BoxFit.cover,),
     ),
 
-    accountName: Text('Belajar Flutter'),
-    accountEmail: Text('hallo@belajarflutter.com'),
+    accountName: Text('Profile Name'),
+    accountEmail: Text(''),
   );
 }
 

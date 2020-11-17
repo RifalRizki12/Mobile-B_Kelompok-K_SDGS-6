@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project/Animation/FadeAnimation.dart';
+import 'package:project/screen/curved_home.dart';
 import 'package:project/screen/register.dart';
 
 import 'home.dart';
@@ -125,10 +126,10 @@ class Login extends StatelessWidget {
                               height: 50,
                               minWidth: 250,
                               onPressed: () {
-                                Navigator.push(
+                                Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => Home()),
+                                      builder: (context) => curvedHome()),
                                 );
                               },
                               shape: RoundedRectangleBorder(

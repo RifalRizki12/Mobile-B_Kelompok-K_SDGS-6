@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:project/screen/beranda.dart' as beranda;
 import 'package:project/screen/hitung.dart' as hitung;
 import 'package:project/screen/berat.dart' as berat;
-import 'package:project/screen/minum.dart' as minum;
 
 import 'nav-drawer.dart';
 
@@ -18,7 +17,7 @@ class _HomeState extends State<Home>  with SingleTickerProviderStateMixin{
   void initState() {
     // TODO: implement initState
     super.initState();
-    controller = TabController(vsync: this, length: 4);
+    controller = TabController(vsync: this, length: 3);
   }
 
   @override
@@ -39,10 +38,10 @@ class _HomeState extends State<Home>  with SingleTickerProviderStateMixin{
         bottom: TabBar(
           controller: controller,
           tabs: <Widget>[
-            Tab(icon: Icon(Icons.home),),
-            Tab(icon: Icon(Icons.alarm),),
-            Tab(icon: Icon(Icons.alarm),),
-            Tab(icon: Icon(Icons.alarm),),
+            Tab(icon: Icon(Icons.home),text: "Beranda",),
+            Tab(icon: Icon(Icons.alarm),text: "alarm",),
+            Tab(icon: Icon(Icons.notifications),text: "notification",),
+            // Tab(child: Image(image: AssetImage("assets/images/icon1.png"),),)
           ],
         ),
       ),
@@ -51,10 +50,10 @@ class _HomeState extends State<Home>  with SingleTickerProviderStateMixin{
       body: TabBarView(
         controller: controller,
         children: <Widget>[
-          beranda.Beranda(controller),
+          // beranda.Beranda(controller),
           hitung.Hitung(),
           berat.Berat(),
-          minum.Minum(),
+          // minum.Minum(),
         ],
       ),
     );
