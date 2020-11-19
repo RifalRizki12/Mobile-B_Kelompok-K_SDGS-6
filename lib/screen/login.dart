@@ -31,7 +31,7 @@ class Login extends StatelessWidget {
                   FadeAnimation(
                       1,
                       Text(
-                        "Login",
+                        "LOGIN",
                         style: TextStyle(color: Colors.white, fontSize: 40),
                       )),
                   SizedBox(

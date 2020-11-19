@@ -15,7 +15,7 @@ class _Splashscreen extends State<Splashscreen> {
   }
 
   splashscreenStart() async {
-    var duration = const Duration(seconds: 3);
+    var duration = const Duration(seconds: 5);
     return Timer(duration, () {
       Navigator.pushReplacement(
         context,
