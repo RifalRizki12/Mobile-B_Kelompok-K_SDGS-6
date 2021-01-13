@@ -23,18 +23,21 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  simple_animations: ^1.3.3
-  curved_navigation_bar: ^0.3.2
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
+  animated_floatactionbuttons: ^0.1.0
   cupertino_icons: ^0.1.3
+  curved_navigation_bar: ^0.3.2
+  cloud_firestore: ^0.14.2
+  firebase_core: ^0.5.1
+  firebase_auth: ^0.18.2
+  provider: ^4.3.2+2
   flutter_svg: ^0.17.4
+  image_picker: null
+  simple_animations: ^1.3.3
 
 dev_dependencies:
-  flutter_launcher_icons: "^0.7.2"
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: "^0.7.2"
 flutter_icons:
   ios: true
   android: true
@@ -45,7 +48,6 @@ flutter_icons:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
-
 # The following section is specific to Flutter.
 flutter:
 
@@ -58,13 +60,10 @@ flutter:
   assets:
     - assets/images/
   #   - images/a_dot_ham.jpeg
-
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
-
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
-
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a

@@ -21,7 +21,7 @@ class _ProfileState extends State<Profile> {
           ),
           onPressed: () {
             Navigator.pop(context,
-            MaterialPageRoute(builder: (context) => DrawerWidget()));
+                MaterialPageRoute(builder: (context) => DrawerWidget()));
           },
         ),
         actions: [

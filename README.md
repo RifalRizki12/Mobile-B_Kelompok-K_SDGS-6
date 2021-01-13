@@ -8,5 +8,5 @@
 My Water- Aplikasi pengingat untuk minum , dan pengelompokkan air bersih berbasis mobile
 
 # Penjelasan Progress
-1. Progress pertama menambahkan nama dan nim,username github ,link repositori github
-2. progress kedua membuat tampilan splashscreen, login dan register dan menerapkan core widget dan root widget, lalu upload github.
+1. Penerapan root widget dan core widget,Custom Widget, Navigation dan Assets, image
+2. progress kedua membuat tampilan splashscreen, login dan register , statefull widget.

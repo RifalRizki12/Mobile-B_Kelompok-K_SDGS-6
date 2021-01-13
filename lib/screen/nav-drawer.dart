@@ -23,8 +23,8 @@ class DrawerWidget extends StatelessWidget {
               icon: Icons.android,
               text: 'About',
               onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => About()));
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => About()));
               }),
           // _drawerItem(
           //     icon: Icons.access_time,
@@ -60,8 +60,8 @@ class DrawerWidget extends StatelessWidget {
               icon: Icons.input,
               text: 'LogOut',
               onTap: () {
-                Navigator.pushReplacement(context,
-                    MaterialPageRoute(builder: (context) => Login()));
+                Navigator.pushReplacement(
+                    context, MaterialPageRoute(builder: (context) => Login()));
               }),
         ],
       ),
@@ -73,9 +73,10 @@ Widget _drawerHeader() {
   return UserAccountsDrawerHeader(
     currentAccountPicture: ClipOval(
       child: Image(
-          image: AssetImage('assets/images/icon1.png'), fit: BoxFit.cover,),
+        image: AssetImage('assets/images/icon1.png'),
+        fit: BoxFit.cover,
+      ),
     ),
-
     accountName: Text('Profile Name'),
     accountEmail: Text(''),
   );

@@ -1,11 +1,17 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:project/Animation/FadeAnimation.dart';
+import 'package:project/screen/auth.dart';
 import 'package:project/screen/curved_home.dart';
 import 'package:project/screen/register.dart';
 
-import 'home.dart';
+class Login extends StatefulWidget {
+  @override
+  _LoginState createState() => _LoginState();
+}
 
-class Login extends StatelessWidget {
+class _LoginState extends State<Login> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -83,12 +89,14 @@ class Login extends StatelessWidget {
                                             bottom: BorderSide(
                                                 color: Colors.grey[200]))),
                                     child: TextField(
-                                      decoration: InputDecoration(
-                                          hintText: "Nama Pengguna",
-                                          hintStyle: TextStyle(
-                                              color: Colors.grey[600]),
-                                          border: InputBorder.none),
-                                    ),
+                                      keyboardType: TextInputType.emailAddress,
+                                        // controller: emailController,
+                                        decoration: InputDecoration(
+                                            hintText: "Email",
+                                            hintStyle: TextStyle(
+                                                color: Colors.grey[600]),
+                                            border: InputBorder.none),
+                                        ),
                                   ),
                                   Container(
                                     padding: EdgeInsets.all(10),
@@ -97,11 +105,13 @@ class Login extends StatelessWidget {
                                             bottom: BorderSide(
                                                 color: Colors.grey[200]))),
                                     child: TextField(
-                                      decoration: InputDecoration(
-                                          hintText: "Password",
-                                          hintStyle: TextStyle(
-                                              color: Colors.grey[600]),
-                                          border: InputBorder.none),
+                                        // controller: passwordController,
+                                        decoration: InputDecoration(
+                                            hintText: "Password",
+                                            hintStyle: TextStyle(
+                                                color: Colors.grey[600]),
+                                            border: InputBorder.none),
+                                        obscureText: true,
                                     ),
                                   ),
                                 ],
@@ -126,10 +136,10 @@ class Login extends StatelessWidget {
                               height: 50,
                               minWidth: 250,
                               onPressed: () {
-                                Navigator.pushReplacement(
+                                Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => curvedHome()),
+                                      builder: (context) => CurvedHome()),
                                 );
                               },
                               shape: RoundedRectangleBorder(
