@@ -3,8 +3,30 @@ import 'package:project/componenDrawer/about.dart';
 import 'package:project/componenDrawer/profile.dart';
 import 'package:project/componenDrawer/setting.dart';
 import 'package:project/screen/login.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-class DrawerWidget extends StatelessWidget {
+class DrawerWidget extends StatefulWidget {
+  @override
+  _DrawerWidgetState createState() => _DrawerWidgetState();
+}
+
+class _DrawerWidgetState extends State<DrawerWidget> {
+  SharedPreferences logindata;
+  String username;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    initial();
+  }
+
+  void initial() async {
+    logindata = await SharedPreferences.getInstance();
+    setState(() {
+      username = logindata.getString('username');
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -60,8 +82,9 @@ class DrawerWidget extends StatelessWidget {
               icon: Icons.input,
               text: 'LogOut',
               onTap: () {
-                Navigator.pushReplacement(
-                    context, MaterialPageRoute(builder: (context) => Login()));
+                logindata.setBool('login', true);
+                Navigator.pushReplacement(context,
+                    new MaterialPageRoute(builder: (context) => Login()));
               }),
         ],
       ),

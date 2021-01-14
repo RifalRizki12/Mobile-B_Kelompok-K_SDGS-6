@@ -4,6 +4,7 @@ import 'package:project/Animation/FadeAnimation.dart';
 import 'package:project/screen/auth.dart';
 import 'package:project/screen/curved_home.dart';
 import 'package:project/screen/register.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -11,6 +12,37 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  // TextEditingController _email = TextEditingController();
+  // TextEditingController _pass = TextEditingController();
+
+  final username_controller = TextEditingController();
+  final password_controller = TextEditingController();
+  SharedPreferences logindata;
+  bool newuser;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    check_if_already_login();
+  }
+
+  void check_if_already_login() async {
+    logindata = await SharedPreferences.getInstance();
+    newuser = (logindata.getBool('login') ?? true);
+    print(newuser);
+    if (newuser == false) {
+      Navigator.pushReplacement(
+          context, new MaterialPageRoute(builder: (context) => CurvedHome()));
+    }
+  }
+
+  @override
+  void dispose() {
+    // Clean up the controller when the widget is disposed.
+    username_controller.dispose();
+    password_controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -90,13 +122,13 @@ class _LoginState extends State<Login> {
                                                 color: Colors.grey[200]))),
                                     child: TextField(
                                       keyboardType: TextInputType.emailAddress,
-                                        // controller: emailController,
-                                        decoration: InputDecoration(
-                                            hintText: "Email",
-                                            hintStyle: TextStyle(
-                                                color: Colors.grey[600]),
-                                            border: InputBorder.none),
-                                        ),
+                                      controller: username_controller,
+                                      decoration: InputDecoration(
+                                          hintText: "Email",
+                                          hintStyle: TextStyle(
+                                              color: Colors.grey[600]),
+                                          border: InputBorder.none),
+                                    ),
                                   ),
                                   Container(
                                     padding: EdgeInsets.all(10),
@@ -105,13 +137,13 @@ class _LoginState extends State<Login> {
                                             bottom: BorderSide(
                                                 color: Colors.grey[200]))),
                                     child: TextField(
-                                        // controller: passwordController,
-                                        decoration: InputDecoration(
-                                            hintText: "Password",
-                                            hintStyle: TextStyle(
-                                                color: Colors.grey[600]),
-                                            border: InputBorder.none),
-                                        obscureText: true,
+                                      controller: password_controller,
+                                      decoration: InputDecoration(
+                                          hintText: "Password",
+                                          hintStyle: TextStyle(
+                                              color: Colors.grey[600]),
+                                          border: InputBorder.none),
+                                      obscureText: true,
                                     ),
                                   ),
                                 ],
@@ -130,18 +162,33 @@ class _LoginState extends State<Login> {
                           height: 30,
                         ),
                         Container(
+                          height: 50,
+                          width: 250,
                           child: FadeAnimation(
                             1.6,
-                            MaterialButton(
-                              height: 50,
-                              minWidth: 250,
+                            RaisedButton(
+                              // height: 50,
+                              // minWidth: 250,
                               onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => CurvedHome()),
-                                );
+                                String username = username_controller.text;
+                                String password = password_controller.text;
+                                if (username != '' && password != '') {
+                                  print('Successfull');
+                                  logindata.setBool('login', false);
+                                  logindata.setString('username', username);
+                                  Navigator.pushReplacement(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => CurvedHome()));
+                                }
                               },
+                              // onPressed: () {
+                              //   Navigator.push(
+                              //     context,
+                              //     MaterialPageRoute(
+                              //         builder: (context) => CurvedHome()),
+                              //   );
+                              // },
                               shape: RoundedRectangleBorder(
                                 side: BorderSide(
                                   color: Colors.white,

@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:project/screen/nav-drawer.dart';
 
 class Profile extends StatefulWidget {
@@ -7,6 +10,23 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
+  //camera
+  File _image;
+
+  Future getImage(bool isCamera) async {
+    File image;
+    if (isCamera) {
+      // ignore: deprecated_member_use
+      image = await ImagePicker.pickImage(source: ImageSource.camera);
+    } else {
+      // ignore: deprecated_member_use
+      image = await ImagePicker.pickImage(source: ImageSource.gallery);
+    }
+    setState(() {
+      _image = image;
+    });
+  }
+
   bool showPassword = false;
   @override
   Widget build(BuildContext context) {
@@ -155,16 +175,16 @@ class _ProfileState extends State<Profile> {
         decoration: InputDecoration(
             suffixIcon: isPasswordTextField
                 ? IconButton(
-              onPressed: () {
-                setState(() {
-                  showPassword = !showPassword;
-                });
-              },
-              icon: Icon(
-                Icons.remove_red_eye,
-                color: Colors.grey,
-              ),
-            )
+                    onPressed: () {
+                      setState(() {
+                        showPassword = !showPassword;
+                      });
+                    },
+                    icon: Icon(
+                      Icons.remove_red_eye,
+                      color: Colors.grey,
+                    ),
+                  )
                 : null,
             contentPadding: EdgeInsets.only(bottom: 3),
             labelText: labelText,

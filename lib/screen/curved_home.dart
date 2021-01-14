@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:project/screen/beranda.dart';
 import 'package:project/screen/berat.dart';
-import 'package:project/screen/hitung.dart';
+import 'package:project/screen/maps.dart';
 import 'package:project/screen/nav-drawer.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class CurvedHome extends StatefulWidget {
   @override
@@ -11,15 +12,31 @@ class CurvedHome extends StatefulWidget {
 }
 
 class _CurvedHomeState extends State<CurvedHome> {
+  SharedPreferences logindata;
+  String username;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    initial();
+  }
+
+  void initial() async {
+    logindata = await SharedPreferences.getInstance();
+    setState(() {
+      username = logindata.getString('username');
+    });
+  }
+
   var _page = 0;
-  final pages = [Beranda(), Hitung(), Berat()];
+  final pages = [Beranda(), Maps(), Berat()];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.lightBlueAccent,
-        title: new Text("Dashboard"),
+        title: new Text("My Water"),
       ),
       drawer: DrawerWidget(),
       bottomNavigationBar: CurvedNavigationBar(
@@ -41,7 +58,7 @@ class _CurvedHomeState extends State<CurvedHome> {
             size: 20,
           ),
           Icon(
-            Icons.list,
+            Icons.map,
             size: 20,
           ),
           Icon(
