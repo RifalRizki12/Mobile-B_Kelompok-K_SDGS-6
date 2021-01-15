@@ -1,7 +1,5 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:project/Animation/FadeAnimation.dart';
-import 'package:project/screen/auth.dart';
 import 'package:project/screen/curved_home.dart';
 import 'package:project/screen/register.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -12,20 +10,21 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  // TextEditingController _email = TextEditingController();
-  // TextEditingController _pass = TextEditingController();
-
+  // ignore: non_constant_identifier_names
   final username_controller = TextEditingController();
+  // ignore: non_constant_identifier_names
   final password_controller = TextEditingController();
+
   SharedPreferences logindata;
   bool newuser;
+
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     check_if_already_login();
   }
 
+  // ignore: non_constant_identifier_names
   void check_if_already_login() async {
     logindata = await SharedPreferences.getInstance();
     newuser = (logindata.getBool('login') ?? true);
@@ -124,7 +123,7 @@ class _LoginState extends State<Login> {
                                       keyboardType: TextInputType.emailAddress,
                                       controller: username_controller,
                                       decoration: InputDecoration(
-                                          hintText: "Email",
+                                          hintText: "Username",
                                           hintStyle: TextStyle(
                                               color: Colors.grey[600]),
                                           border: InputBorder.none),

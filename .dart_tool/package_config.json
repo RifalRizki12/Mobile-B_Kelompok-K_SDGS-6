@@ -351,7 +351,7 @@
     },
     {
       "name": "provider",
-      "rootUri": "file:///D:/Belajar/Android/flutter/.pub-cache/hosted/pub.dartlang.org/provider-4.3.2+3",
+      "rootUri": "file:///D:/Belajar/Android/flutter/.pub-cache/hosted/pub.dartlang.org/provider-4.3.2+4",
       "packageUri": "lib/",
       "languageVersion": "2.7"
     },
@@ -488,7 +488,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2021-01-14T07:22:07.969977Z",
+  "generated": "2021-01-15T02:37:02.252445Z",
   "generator": "pub",
   "generatorVersion": "2.9.1"
 }

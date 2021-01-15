@@ -38,8 +38,6 @@ class _Splashscreen extends State<Splashscreen> {
               1,
               Image.asset(
                 "assets/images/loogo.png",
-                // width: 100.0,
-                // height: 50.0,
                 fit: BoxFit.cover,
               ),
             ),

@@ -18,7 +18,6 @@ class _MapsState extends State<Maps> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     // checkPermissionGps();
   }
@@ -49,54 +48,8 @@ class _MapsState extends State<Maps> {
       if (mapController != null) {
         gpsLoc = new mb.LatLng(pos.latitude, pos.longitude);
         var newCamLoc = mb.CameraUpdate.newLatLng(gpsLoc);
-        // re-center map camera
-        // mapController.animateCamera(newCamLoc);
-
-        // var newCircle = new mb.CircleOptions(
-        //   geometry: gpsLoc,
-        //   circleColor: 'yellow',
-        //   circleStrokeColor: 'black',
-        //   circleStrokeWidth: 1,
-        //   circleRadius: 10,
-        //   draggable: false,
-        // );
-        // // add marker
-        // mapController.addCircle(newCircle);
-        // .then((circle) {
-        //   curPosCircle = circle;
-        // });
       }
     });
-
-    // var rnd = new mathdart.Random();
-    // geo.Geolocator.getPositionStream(
-    //   intervalDuration: new Duration(seconds: 10),
-    // ).listen((geo.Position pos) {
-    //   print("cur pos: ${pos.latitude} ${pos.longitude}");
-    //   if (mapController != null) {
-    //     if (curPosCircle != null) {
-    //       mapController.removeCircle(curPosCircle).then((value) {
-    //         var curLoc = new mb.LatLng(pos.latitude, pos.longitude);
-    //         var colors = ['red', '#00FF00', 'blue', 'yellow', 'black', 'brown'];
-
-    //         var ind = rnd.nextInt(colors.length);
-    //         var color = colors[ind];
-    //         print('color: $color, index: $ind');
-    //         var newCircle = new mb.CircleOptions(
-    //           geometry: curLoc,
-    //           circleColor: color,
-    //           circleStrokeColor: 'black',
-    //           circleStrokeWidth: 1,
-    //           circleRadius: 10,
-    //           draggable: false,
-    //         );
-    //         mapController.addCircle(newCircle).then((circle2) {
-    //           curPosCircle = circle2;
-    //         });
-    //       });
-    //     }
-    //   }
-    // });
   }
 
   void checkPermissionGps() async {
@@ -125,40 +78,6 @@ class _MapsState extends State<Maps> {
         getCurrentLoc();
       }
     }
-    // var locEnabled2 = geo.Geolocator.isLocationServiceEnabled();
-    // geo.Geolocator.isLocationServiceEnabled().then((bool isEnabled) {
-    //   print("LOCATION SERVICE ENABLED? : $isEnabled");
-    //   // device tidak mengaktifkan/memiliki location service
-    //   if (isEnabled == false) {
-    //     msgLocError("Layanan Lokasi tidak tersedia");
-    //   }
-    //   //device mengaktifkan/memiliki location service
-    //   else {
-    //     geo.Geolocator.checkPermission().then((geo.LocationPermission locPerm) {
-    //       // app selamanya diblokir mengakses lokasi
-    //       if (locPerm == geo.LocationPermission.deniedForever) {
-    //         msgLocError('Tidak dapat meminta permission');
-    //       }
-    //       // app diblokir sementara / belum pernah mengakses lokasi sebelumnya
-    //       else if (locPerm == geo.LocationPermission.denied) {
-    //         // minta akses ke user
-    //         geo.Geolocator.requestPermission().then((geo.LocationPermission permRes) {
-    //           if (permRes == geo.LocationPermission.whileInUse || permRes == geo.LocationPermission.always) {
-    //             // user mengizinkan
-    //             getCurrentLoc();
-    //           } else {
-    //             // user tidak mengizinkan
-    //             msgLocError('User tidak memberikan permission');
-    //           }
-    //         });
-    //       }
-    //       // app telah diizinkan sebelumnya
-    //       else {
-    //         getCurrentLoc();
-    //       }
-    //     });
-    //   }
-    // });
   }
 
   @override

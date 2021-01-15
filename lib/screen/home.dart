@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-// import 'package:project/screen/beranda.dart' as beranda;
 import 'package:project/screen/maps.dart' as hitung;
-import 'package:project/screen/berat.dart' as berat;
+import 'package:project/screen/clock.dart' as berat;
 
 import 'nav-drawer.dart';
 
@@ -59,7 +58,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
         children: <Widget>[
           // beranda.Beranda(controller),
           hitung.Maps(),
-          berat.Berat(),
+          berat.Clock(),
           // minum.Minum(),
         ],
       ),

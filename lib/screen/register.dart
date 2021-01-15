@@ -1,21 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:project/Animation/FadeAnimation.dart';
 
-import 'auth.dart';
-
 class Register extends StatefulWidget {
   @override
   _RegisterState createState() => new _RegisterState();
 }
 
 class _RegisterState extends State<Register> {
-  String _jk = "";
-  void _pilihjk(String value) {
-    setState(() {
-      _jk = value;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -94,7 +85,7 @@ class _RegisterState extends State<Register> {
                                                 color: Colors.grey[200]))),
                                     child: TextField(
                                       decoration: InputDecoration(
-                                          hintText: "Email",
+                                          hintText: "Username",
                                           hintStyle: TextStyle(
                                               color: Colors.grey[600]),
                                           border: OutlineInputBorder(
@@ -120,73 +111,12 @@ class _RegisterState extends State<Register> {
                                       ),
                                     ),
                                   ),
-                                  // Container(
-                                  //   padding: EdgeInsets.all(10),
-                                  //   decoration: BoxDecoration(
-                                  //       border: Border(
-                                  //           bottom: BorderSide(
-                                  //               color: Colors.grey[200]))),
-                                  //   child: TextField(
-                                  //     maxLines: 5,
-                                  //     decoration: InputDecoration(
-                                  //       hintText: "Moto Hidup",
-                                  //       hintStyle:
-                                  //           TextStyle(color: Colors.grey[600]),
-                                  //       border: OutlineInputBorder(
-                                  //           borderRadius:
-                                  //               BorderRadius.circular(20.0)),
-                                  //     ),
-                                  //   ),
-                                  // ),
                                 ],
                               ),
                             )),
                         SizedBox(
                           height: 20,
                         ),
-                        // FadeAnimation(
-                        //   1.6,
-                        //   Container(
-                        //       decoration: BoxDecoration(
-                        //           color: Colors.white,
-                        //           borderRadius: BorderRadius.circular(10),
-                        //           boxShadow: [
-                        //             BoxShadow(
-                        //                 color: Colors.grey,
-                        //                 blurRadius: 10,
-                        //                 offset: Offset(0, 10))
-                        //           ]),
-                        //       child: Column(
-                        //         children: [
-                        //           Text(
-                        //             "Pilih Kelamin",
-                        //             style: TextStyle(fontSize: 20),
-                        //           ),
-                        //           RadioListTile(
-                        //             value: "Laki-laki",
-                        //             title: Text("Laki-laki"),
-                        //             groupValue: _jk,
-                        //             onChanged: (value) {
-                        //               _pilihjk(value);
-                        //             },
-                        //             activeColor: Colors.red,
-                        //             subtitle:
-                        //                 Text("Pilih ini jika anda laki-laki"),
-                        //           ),
-                        //           RadioListTile(
-                        //             value: "Perempuan",
-                        //             title: Text("Perempuan"),
-                        //             groupValue: _jk,
-                        //             onChanged: (value) {
-                        //               _pilihjk(value);
-                        //             },
-                        //             activeColor: Colors.red,
-                        //             subtitle:
-                        //                 Text("Pilih ini jika anda perempuan"),
-                        //           )
-                        //         ],
-                        //       )),
-                        // ),
                         SizedBox(
                           height: 30,
                         ),
@@ -213,8 +143,7 @@ class _RegisterState extends State<Register> {
                             MaterialButton(
                               height: 50,
                               minWidth: 250,
-                              onPressed: () async {
-                              },
+                              onPressed: () async {},
                               // onPressed: () {
                               //   Navigator.push(
                               //     context,

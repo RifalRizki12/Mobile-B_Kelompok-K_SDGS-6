@@ -1,8 +1,9 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_floatactionbuttons/animated_floatactionbuttons.dart';
 import 'package:project/screen/upload.dart';
+
+import 'listData.dart';
 
 class Beranda extends StatefulWidget {
   @override
@@ -17,6 +18,8 @@ class _BerandaState extends State<Beranda> {
     return Container(
       child: FloatingActionButton(
         onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => ListData()));
           setState(() {
             index = index + 1;
           });
@@ -26,7 +29,7 @@ class _BerandaState extends State<Beranda> {
         heroTag: 'add',
         elevation: 2.0,
         child: Icon(
-          Icons.add,
+          Icons.list,
           color: Colors.black,
         ),
       ),
@@ -83,17 +86,26 @@ class _BerandaState extends State<Beranda> {
   var titleList = [
     "Success",
     "Motivation",
+    "Air Bersih",
+    "Air Bersih",
+    "Air Bersih",
   ];
 
   // Description List Here
   var descList = [
     "Push yourself, because no one else is going to do it for you.Push yourself, because no one else is going to do it for you.Push yourself, because no one else is going to do it for you.Push yourself, because no one else is going to do it for you.Push yourself, because no one else is going to do it for me.",
     "Your limitation—it's only your imagination.",
+    "Push yourself, because no one else is going to do it for you.Push yourself, because no one else is going to do it for you.Push yourself, because no one else is going to do it for you.Push yourself, because no one else is going to do it for you.Push yourself, because no one else is going to do it for me.",
+    "Push yourself, because no one else is going to do it for you.Push yourself, because no one else is going to do it for you.Push yourself, because no one else is going to do it for you.Push yourself, because no one else is going to do it for you.Push yourself, because no one else is going to do it for me.",
+    "Push yourself, because no one else is going to do it for you.Push yourself, because no one else is going to do it for you.Push yourself, because no one else is going to do it for you.Push yourself, because no one else is going to do it for you.Push yourself, because no one else is going to do it for me.",
   ];
 
   // Image Name List Here
   var imgList = [
-    "assets/images/avatar.png",
+    "assets/images/loogo.png",
+    "assets/images/air1.jpg",
+    "assets/images/air2.jpg",
+    "assets/images/air3.jpg",
     "assets/images/loogo.png",
   ];
 

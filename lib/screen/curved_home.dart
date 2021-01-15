@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:project/screen/beranda.dart';
-import 'package:project/screen/berat.dart';
+import 'package:project/screen/clock.dart';
 import 'package:project/screen/maps.dart';
 import 'package:project/screen/nav-drawer.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -14,9 +14,9 @@ class CurvedHome extends StatefulWidget {
 class _CurvedHomeState extends State<CurvedHome> {
   SharedPreferences logindata;
   String username;
+
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     initial();
   }
@@ -29,7 +29,7 @@ class _CurvedHomeState extends State<CurvedHome> {
   }
 
   var _page = 0;
-  final pages = [Beranda(), Maps(), Berat()];
+  final pages = [Beranda(), Maps(), Clock()];
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +62,7 @@ class _CurvedHomeState extends State<CurvedHome> {
             size: 20,
           ),
           Icon(
-            Icons.notifications,
+            Icons.alarm,
             size: 20,
           ),
         ],

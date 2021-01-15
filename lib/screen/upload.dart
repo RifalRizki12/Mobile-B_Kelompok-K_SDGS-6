@@ -4,6 +4,7 @@ import 'package:animated_floatactionbuttons/animated_floatactionbuttons.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:project/Animation/FadeAnimation.dart';
+import 'package:project/screen/curved_home.dart';
 
 class Upload extends StatefulWidget {
   @override
@@ -30,26 +31,6 @@ class _UploadState extends State<Upload> {
 
   //floating Action button
   int index = 0;
-
-  // Widget exampleOne() {
-  //   return Container(
-  //     child: FloatingActionButton(
-  //       onPressed: () {
-  //         setState(() {
-  //           index = index + 1;
-  //         });
-  //       },
-  //       focusColor: Colors.yellow,
-  //       focusElevation: 16.0,
-  //       heroTag: 'add',
-  //       elevation: 2.0,
-  //       child: Icon(
-  //         Icons.add,
-  //         color: Colors.black,
-  //       ),
-  //     ),
-  //   );
-  // }
 
   Widget exampleTwo() {
     return Container(
@@ -153,15 +134,12 @@ class _UploadState extends State<Upload> {
                     MaterialButton(
                       height: 50,
                       minWidth: 250,
-                      onPressed: () async {
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (context) => CurvedHome()),
+                        );
                       },
-                      // onPressed: () {
-                      //   Navigator.push(
-                      //     context,
-                      //     MaterialPageRoute(
-                      //         builder: (context) => Register()),
-                      //   );
-                      // },
                       shape: RoundedRectangleBorder(
                         side: BorderSide(
                           color: Colors.white,

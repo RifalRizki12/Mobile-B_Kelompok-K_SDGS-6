@@ -13,9 +13,9 @@ class DrawerWidget extends StatefulWidget {
 class _DrawerWidgetState extends State<DrawerWidget> {
   SharedPreferences logindata;
   String username;
+
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     initial();
   }
@@ -48,20 +48,6 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                 Navigator.push(
                     context, MaterialPageRoute(builder: (context) => About()));
               }),
-          // _drawerItem(
-          //     icon: Icons.access_time,
-          //     text: 'Recent',
-          //     onTap: () {
-          //       Navigator.pushReplacement(context,
-          //           MaterialPageRoute(builder: (context) => Login()));
-          //     }),
-          // _drawerItem(
-          //     icon: Icons.delete,
-          //     text: 'Trash',
-          //     onTap: () {
-          //       Navigator.pushReplacement(context,
-          //           MaterialPageRoute(builder: (context) => Login()));
-          //     }),
           Divider(height: 25, thickness: 1),
           Padding(
             padding: const EdgeInsets.only(left: 20.0, top: 10, bottom: 10),
@@ -96,7 +82,7 @@ Widget _drawerHeader() {
   return UserAccountsDrawerHeader(
     currentAccountPicture: ClipOval(
       child: Image(
-        image: AssetImage('assets/images/icon1.png'),
+        image: AssetImage('assets/images/avatar.png'),
         fit: BoxFit.cover,
       ),
     ),
